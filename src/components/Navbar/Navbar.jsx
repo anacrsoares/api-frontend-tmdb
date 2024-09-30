@@ -6,6 +6,12 @@ export default function Navbar() {
     <div>
       <nav className="navbar">
         <h1>Busca Filmes</h1>
+
+        <ul>
+          <li>Filmes</li>
+          <li></li>
+          <li></li>
+        </ul>
       </nav>
     </div>
   );
