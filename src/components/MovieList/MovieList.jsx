@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import MovieCard from "../MovieCard/MovieCard";
-import "./MovieList.css";
+import "./movieList.css";
 
 export default function MovieList({ searchTerm }) {
   const [moviesList, setMoviesList] = useState([]);
