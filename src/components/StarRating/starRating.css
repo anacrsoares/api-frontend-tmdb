@@ -1,0 +1,7 @@
+.star-container {
+  color: var(--golden-yellow-stars);
+
+  svg {
+    width: fit-content;
+  }
+}

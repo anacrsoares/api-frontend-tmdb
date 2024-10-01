@@ -1,17 +1,29 @@
 import React from "react";
-import "./Navbar.css";
+import "./navbar.css";
+import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    onSearch(event.target.value);
+    console.log(value);
+  };
+
   return (
     <div>
       <nav className="navbar">
         <h1>Busca Filmes</h1>
-
-        <ul>
-          <li>Filmes</li>
-          <li></li>
-          <li></li>
-        </ul>
+        <form onSubmit={(event) => handleSearch(event)}>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={handleSearch}
+            placeholder="Procure seu filme"
+            id="search-bar"
+          />
+        </form>
       </nav>
     </div>
   );
