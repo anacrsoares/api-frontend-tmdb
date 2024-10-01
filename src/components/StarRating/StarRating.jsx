@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRegStar } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-import "./starRating.css";
+import "./StarRating.css";
 
 export default function StarRating({ rating }) {
   const numStars = Math.round(parseFloat(rating) / 2);
