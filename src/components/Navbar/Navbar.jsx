@@ -13,7 +13,7 @@ export default function Navbar({ onSearch }) {
 
   return (
     <div>
-      <nav className="navbar">
+      <nav className="container-navbar">
         <h1>Busca Filmes</h1>
         <form>
           <input

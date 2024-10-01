@@ -1,6 +1,6 @@
 @import url("../../globals.css");
 
-.navbar {
+.container-navbar {
   display: flex;
   justify-content: space-between;
   background-color: var(--dark-background);
