@@ -15,7 +15,7 @@ export default function Navbar({ onSearch }) {
     <div>
       <nav className="navbar">
         <h1>Busca Filmes</h1>
-        <form onSubmit={(event) => handleSearch(event)}>
+        <form>
           <input
             type="text"
             value={searchTerm}
