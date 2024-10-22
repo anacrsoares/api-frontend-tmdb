@@ -1,31 +1,43 @@
 import React from "react";
 import "./movieCard.css";
 import StarRating from "../StarRating/StarRating";
+import { Link } from "react-router-dom";
+
+const posterImage = import.meta.env.VITE_IMG;
 
 export default function MovieCard({ index, movie }) {
   return (
-    <div>
+    <>
       <li key={index}>
         <div className="card-container">
           <img
-            src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            src={`${posterImage}/${movie.poster_path}`}
             className="movie-poster-img"
             alt={movie.title}
           />
-          <h2 className="movie-title">
-            {movie.title}
-            <StarRating className="star-rating" rating={movie.vote_average} />
-          </h2>
-        </div>
+          <div className="movie-info">
+            <h2 className="movie-title">
+              {movie.title}
+              <StarRating className="star-rating" rating={movie.vote_average} />
+            </h2>
+            <div className="hidden-content">
+              {movie.overview && (
+                <p className="description-overview">
+                  {movie.overview.length > 150
+                    ? `${movie.overview.substring(0, 150)}...`
+                    : movie.overview}
+                </p>
+              )}
 
-        <div className="movie-infos">
-          <div className="hidden-content">
-            <p className="description-overview">{movie.overview}</p>
-
-            <button className="see-more-btn">Ver mais</button>
+              <button className="see-more-btn">
+                <Link className="see-more-btn" to={`/movie/${movie.id}`}>
+                  Ver mais
+                </Link>
+              </button>
+            </div>
           </div>
         </div>
       </li>
-    </div>
+    </>
   );
 }

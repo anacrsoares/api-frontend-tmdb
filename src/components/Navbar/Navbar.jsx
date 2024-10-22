@@ -1,6 +1,9 @@
 import React from "react";
 import "./Navbar.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+// import logo from "../../assets/logo.png";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 export default function Navbar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,8 +17,16 @@ export default function Navbar({ onSearch }) {
   return (
     <div>
       <nav className="container-navbar">
-        <h1>Busca Filmes</h1>
-        <form>
+        <div className="logo-container">
+          {/* <Link to="/">
+            <img src={logo} alt="Site Logo" />
+          </Link> */}
+          <Link to="/">
+            <h1>2098Movies</h1>
+          </Link>
+        </div>
+
+        <form className="search-bar">
           <input
             type="text"
             value={searchTerm}
@@ -23,6 +34,9 @@ export default function Navbar({ onSearch }) {
             placeholder="Procure seu filme"
             id="search-bar"
           />
+          <button type="submit">
+            <BiSearchAlt2 />
+          </button>
         </form>
       </nav>
     </div>

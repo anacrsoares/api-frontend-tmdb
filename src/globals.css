@@ -21,17 +21,24 @@
 }
 
 body {
-  display: flex;
+  /* display: flex; */
+  margin: auto;
   color: var(--light-black-font);
+  overflow-x: hidden;
 }
 
 .home-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  list-style: none;
-  padding: 10px;
   background-color: var(--yellow-background);
+}
+
+input,
+button {
+  font-family: "Michroma", sans-serif;
+  font-weight: bolder;
+}
+
+input::placeholder {
+  color: #ffcccc;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,23 +1,30 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useNavigate } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import "./movieList.css";
+
+// constants
+const apiKey = import.meta.env.VITE_API_KEY;
+const moviesDiscover = import.meta.env.VITE_API_DISCOVER;
+const movieTopLevelDetails = import.meta.env.VITE_MOVIE_TOP_LEVEL_DETAILS;
 
 export default function MovieList({ searchTerm }) {
   const [moviesList, setMoviesList] = useState([]);
 
+  const handleClick = (id) => {
+    console.log(id);
+  };
+
   const getMovies = () => {
     axios({
       method: "get",
-      url: "https://api.themoviedb.org/3/discover/movie",
+      url: moviesDiscover,
       params: {
-        api_key: "4f891e845bd62dd701ff944e14e58fc0",
+        api_key: apiKey,
         language: "pt-BR",
       },
     }).then((response) => {
-      console.log(response);
       setMoviesList(response.data.results);
     });
   };
@@ -31,11 +38,17 @@ export default function MovieList({ searchTerm }) {
   );
 
   return (
-    <div>
-      <ul className="movie-list">
+    <div className="movies-container">
+      <ul className="movies-list">
+        {moviesList.length <= 0 && <p>Carregando...</p>}
         {filteredMovies.length > 0 ? (
           filteredMovies.map((movie, index) => (
-            <MovieCard key={index} movie={movie} index={index} />
+            <MovieCard
+              key={index}
+              movie={movie}
+              index={index}
+              handleClick={handleClick}
+            />
           ))
         ) : (
           <p>Nenhum filme encontrado</p>

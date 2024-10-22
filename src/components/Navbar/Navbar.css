@@ -1,6 +1,47 @@
 .container-navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 3rem;
+  padding: 20px;
+  height: 100px;
   background-color: var(--dark-background);
   color: var(--light-font-default);
+  width: 100vw;
+  /* background-color: var(--light-black-font); */
+  /* background-color: yellow; */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid wheat; */
+}
+
+.logo-container a {
+  font-size: 2rem;
+  color: var(--light-font-default);
+  text-decoration: none;
+}
+
+.logo-container img {
+  width: 60px;
+  color: antiquewhite;
+}
+
+.search-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar input {
+  height: 30px;
+  width: 300px;
+}
+
+.search-bar button {
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 5px;
 }

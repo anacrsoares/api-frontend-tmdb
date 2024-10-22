@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar/Navbar";
 import MovieList from "../components/MovieList/MovieList";
 import { useState } from "react";
 
+// css
+import "./home.css";
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -11,8 +14,9 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="homepage">
       <Navbar onSearch={handleSearch} />
+
       <div className="home-wrapper">
         <MovieList searchTerm={searchTerm} />
       </div>
