@@ -12,7 +12,7 @@ import { StrictMode } from "react";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter basename="/api-frontend-tmdb">
     <Routes>
-      <Route path="/api-frontend-tmdb/" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/movie/:id" element={<MovieDetails />} />
     </Routes>
   </BrowserRouter>
