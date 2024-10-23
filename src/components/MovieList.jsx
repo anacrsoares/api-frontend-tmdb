@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useNavigate } from "react";
 import axios from "axios";
-import MovieCard from "../MovieCard/MovieCard";
+import MovieCard from "./MovieCard";
 import "./movieList.css";
 
 // constants

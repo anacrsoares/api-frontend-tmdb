@@ -1,6 +1,6 @@
 import React from "react";
 import "./movieCard.css";
-import StarRating from "../StarRating/StarRating";
+import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 
 const posterImage = import.meta.env.VITE_IMG;
