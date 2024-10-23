@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import MovieList from "../components/MovieList/MovieList";
+import Navbar from "../components/Navbar";
+import MovieList from "../components/MovieList";
 import { useState } from "react";
 
 // css
