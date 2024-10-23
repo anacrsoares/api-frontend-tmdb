@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // styles
 import "./globals.css";
@@ -7,12 +7,15 @@ import "./globals.css";
 // pages
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
+import { StrictMode } from "react";
 
 createRoot(document.getElementById("root")).render(
-  <HashRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="movie/:id" element={<MovieDetails />} />
-    </Routes>
-  </HashRouter>
+  <StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/api-frontend-tmdb/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
 );
