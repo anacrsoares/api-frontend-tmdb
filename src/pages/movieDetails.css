@@ -1,0 +1,67 @@
+.movie-details {
+  color: aliceblue;
+  padding: 10px;
+}
+
+.movie-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+
+  .runtime {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .flag-description {
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+  }
+
+  span {
+    font-family: monospace;
+    color: yellow;
+  }
+}
+
+.flag {
+  font-size: 0.6rem;
+}
+
+.info-budget {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+
+.info-budget p {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.info-sinopse {
+  padding: 20px;
+}
+
+.info-sinopse p {
+  font-family: monospace;
+  line-height: 2rem;
+  letter-spacing: 0.15rem;
+  font-size: 1.2rem;
+}
+
+.movie-image {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 50%;
+
+    box-shadow: 1px 3px 10px 1px var(--light-shadow-box);
+  }
+}

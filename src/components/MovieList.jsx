@@ -7,7 +7,6 @@ import "./movieList.css";
 // constants
 const apiKey = import.meta.env.VITE_API_KEY;
 const moviesDiscover = import.meta.env.VITE_API_DISCOVER;
-const movieTopLevelDetails = import.meta.env.VITE_MOVIE_TOP_LEVEL_DETAILS;
 
 export default function MovieList({ searchTerm }) {
   const [moviesList, setMoviesList] = useState([]);

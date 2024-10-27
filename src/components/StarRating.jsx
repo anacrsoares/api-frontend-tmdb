@@ -3,7 +3,7 @@ import { FaRegStar } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import "./starRating.css";
 
-export default function StarRating({ rating }) {
+export default function StarRating({ rating, index }) {
   const numStars = Math.round(parseFloat(rating) / 2);
 
   let stars;

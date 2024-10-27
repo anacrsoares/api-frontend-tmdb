@@ -18,7 +18,11 @@ export default function MovieCard({ index, movie }) {
           <div className="movie-info">
             <h2 className="movie-title">
               {movie.title}
-              <StarRating className="star-rating" rating={movie.vote_average} />
+              <StarRating
+                index={index}
+                className="star-rating"
+                rating={movie.vote_average}
+              />
             </h2>
             <div className="hidden-content">
               {movie.overview && (

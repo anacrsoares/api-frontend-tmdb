@@ -7,7 +7,7 @@ import "./globals.css";
 // pages
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter basename="/api-frontend-tmdb">
