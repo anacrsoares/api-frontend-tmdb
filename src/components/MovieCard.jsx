@@ -14,15 +14,16 @@ const posterImage = import.meta.env.VITE_IMG;
 export default function MovieCard({ index, movie }) {
   const { listFavorites, handleFavoriteList } = useAppContext();
 
-  const [isFavorited, setIsFavorited] = useState(false);
-
   const handleFavoriteListInternal = () => {
     handleFavoriteList(movie); // Chamando a função do contexto para atualizar os favoritos
   };
 
-  const handleFavoriteClick = () => {
-    setIsFavorited(!isFavorited);
-  };
+  // const [isFavorited, setIsFavorited] = useState(false);
+
+  const isFavorited = movie.id in listFavorites;
+  // const handleFavoriteClick = () => {
+  //   setIsFavorited(!isFavorited);
+  // };
 
   return (
     <>
@@ -46,14 +47,15 @@ export default function MovieCard({ index, movie }) {
             {/* Botão de Favorito */}
             <IconButton
               onClick={() => {
-                handleFavoriteClick();
                 handleFavoriteListInternal();
               }}
               sx={{ justifyContent: "flex-end" }}
             >
               {isFavorited ? (
                 <FavoriteIcon sx={{ fontSize: 40, color: red[900] }} />
-              ) : null}
+              ) : (
+                <FavoriteBorderIcon sx={{ fontSize: 40, color: red[900] }} />
+              )}
             </IconButton>
 
             <div className="hidden-content">
@@ -74,13 +76,12 @@ export default function MovieCard({ index, movie }) {
               {/* Botão de Favorito */}
               <IconButton
                 onClick={() => {
-                  handleFavoriteClick();
                   handleFavoriteListInternal();
                 }}
               >
-                {isFavorited ? null : (
-                  <FavoriteBorderIcon sx={{ fontSize: 40, color: red[900] }} />
-                )}
+                {isFavorited ? (
+                  <FavoriteIcon sx={{ fontSize: 40, color: red[900] }} />
+                ) : null}
               </IconButton>
             </div>
           </div>
