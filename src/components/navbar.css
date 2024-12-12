@@ -1,26 +1,22 @@
 .container-navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  padding: 20px;
   height: 100px;
   background-color: var(--dark-background);
   color: var(--light-font-default);
-  width: 100vw;
-  /* background-color: var(--light-black-font); */
-  /* background-color: yellow; */
 }
 
 .logo-container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  /* border: 1px solid wheat; */
+  width: 100vw;
+  padding: 40px;
 }
 
 .logo-container a {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--light-font-default);
   text-decoration: none;
 }
@@ -36,12 +32,85 @@
 }
 
 .search-bar input {
-  height: 30px;
-  width: 300px;
+  font-size: 1.5rem;
+  width: 400px;
 }
 
 .search-bar button {
-  font-size: 1.1rem;
+  font-size: 2rem;
   cursor: pointer;
   padding: 5px;
+}
+
+/* Adicionando media query para dispositivos menores */
+
+@media (max-width: 1024px) {
+  .logo-container {
+    padding: 20px;
+  }
+
+  .logo-container a {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
+  }
+
+  .search-bar input {
+    width: 300px; /* Reduz a largura da barra de busca */
+  }
+
+  .search-bar button {
+    font-size: 1.8rem; /* Reduz o tamanho do botão */
+  }
+}
+
+@media (max-width: 768px) {
+  .container-navbar {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    padding: 10px;
+    width: auto; /* Ajusta o layout da logo-container */
+  }
+
+  .logo-container a {
+    font-size: 1.2rem; /* Reduz ainda mais o tamanho da fonte */
+  }
+
+  .logo-container img {
+    width: 50px; /* Reduz o tamanho da imagem */
+  }
+
+  .search-bar {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-bar input {
+    width: 100%; /* A largura da busca ocupa toda a tela */
+    font-size: 1.2rem;
+  }
+
+  .search-bar button {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container a {
+    font-size: 1rem; /* Reduz o tamanho da fonte para dispositivos muito pequenos */
+  }
+
+  .search-bar input {
+    font-size: 1rem; /* Ajuste do tamanho da fonte da barra de pesquisa */
+    padding: 10px;
+  }
+
+  .search-bar button {
+    font-size: 1.2rem; /* Ajuste do tamanho do botão */
+  }
 }

@@ -15,16 +15,11 @@ export default function Navbar({ onSearch }) {
   };
 
   return (
-    <div>
-      <nav className="container-navbar">
-        <div className="logo-container">
-          {/* <Link to="/">
-            <img src={logo} alt="Site Logo" />
-          </Link> */}
-          <Link to="/">
-            <h1>2098Movies</h1>
-          </Link>
-        </div>
+    <div className="container-navbar">
+      <div className="logo-container">
+        <Link to="/">
+          <h1>2098Movies</h1>
+        </Link>
 
         <form className="search-bar">
           <input
@@ -38,7 +33,7 @@ export default function Navbar({ onSearch }) {
             <BiSearchAlt2 />
           </button>
         </form>
-      </nav>
+      </div>
     </div>
   );
 }
