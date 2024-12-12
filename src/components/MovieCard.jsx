@@ -7,6 +7,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useState } from "react";
 import { red } from "@mui/material/colors";
+import { useAppContext } from "../Context";
 
 const posterImage = import.meta.env.VITE_IMG;
 
