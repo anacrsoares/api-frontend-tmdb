@@ -12,7 +12,6 @@ const posterImage = import.meta.env.VITE_IMG;
 
 export default function MovieCard({ index, movie }) {
   const [isFavorited, setIsFavorited] = useState(false);
-  const { listFavorites, handleFavoriteClick } = useFavorites();
 
   const handleFavoriteClick = () => {
     setIsFavorited(!isFavorited);
