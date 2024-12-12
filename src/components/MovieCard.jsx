@@ -6,12 +6,13 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useState } from "react";
-import { pink, red } from "@mui/material/colors";
+import { red } from "@mui/material/colors";
 
 const posterImage = import.meta.env.VITE_IMG;
 
 export default function MovieCard({ index, movie }) {
   const [isFavorited, setIsFavorited] = useState(false);
+  const { listFavorites, handleFavoriteClick } = useFavorites();
 
   const handleFavoriteClick = () => {
     setIsFavorited(!isFavorited);
