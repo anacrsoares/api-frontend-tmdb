@@ -15,15 +15,10 @@ export default function MovieCard({ index, movie }) {
   const { listFavorites, handleFavoriteList } = useAppContext();
 
   const handleFavoriteListInternal = () => {
-    handleFavoriteList(movie); // Chamando a função do contexto para atualizar os favoritos
+    handleFavoriteList(movie);
   };
 
-  // const [isFavorited, setIsFavorited] = useState(false);
-
   const isFavorited = movie.id in listFavorites;
-  // const handleFavoriteClick = () => {
-  //   setIsFavorited(!isFavorited);
-  // };
 
   return (
     <>
@@ -49,12 +44,19 @@ export default function MovieCard({ index, movie }) {
               onClick={() => {
                 handleFavoriteListInternal();
               }}
+              aria-label="favorite-button"
               sx={{ justifyContent: "flex-end" }}
             >
               {isFavorited ? (
-                <FavoriteIcon sx={{ fontSize: 40, color: red[900] }} />
+                <FavoriteIcon
+                  aria-label="favorite-filled"
+                  sx={{ fontSize: 40, color: red[900] }}
+                />
               ) : (
-                <FavoriteBorderIcon sx={{ fontSize: 40, color: red[900] }} />
+                <FavoriteBorderIcon
+                  aria-label="favorite-border"
+                  sx={{ fontSize: 40, color: red[900] }}
+                />
               )}
             </IconButton>
 
@@ -78,11 +80,7 @@ export default function MovieCard({ index, movie }) {
                 onClick={() => {
                   handleFavoriteListInternal();
                 }}
-              >
-                {isFavorited ? (
-                  <FavoriteIcon sx={{ fontSize: 40, color: red[900] }} />
-                ) : null}
-              </IconButton>
+              ></IconButton>
             </div>
           </div>
         </div>

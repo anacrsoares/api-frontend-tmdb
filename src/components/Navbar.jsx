@@ -2,7 +2,6 @@ import React from "react";
 import "./navbar.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import logo from "../../assets/logo.png";
 import { BiSearchAlt2 } from "react-icons/bi";
 
 export default function Navbar({ onSearch }) {
@@ -11,7 +10,7 @@ export default function Navbar({ onSearch }) {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
     onSearch(event.target.value);
-    console.log(value);
+    console.log(event.target.value);
   };
 
   return (

@@ -5,4 +5,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/api-frontend-tmdb/",
   plugins: [react()],
+  test: {
+    globals: true, // Isso permite usar as funções globais de teste como describe, test, etc.
+    environment: "jsdom", // Para simular o DOM
+  },
 });

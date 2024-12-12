@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useNavigate } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import "./movieList.css";
