@@ -12,7 +12,13 @@ import { useAppContext } from "../Context";
 const posterImage = import.meta.env.VITE_IMG;
 
 export default function MovieCard({ index, movie }) {
+  const { listFavorites, handleFavoriteList } = useAppContext();
+
   const [isFavorited, setIsFavorited] = useState(false);
+
+  const handleFavoriteListInternal = () => {
+    handleFavoriteList(movie); // Chamando a função do contexto para atualizar os favoritos
+  };
 
   const handleFavoriteClick = () => {
     setIsFavorited(!isFavorited);
@@ -39,7 +45,10 @@ export default function MovieCard({ index, movie }) {
 
             {/* Botão de Favorito */}
             <IconButton
-              onClick={handleFavoriteClick}
+              onClick={() => {
+                handleFavoriteClick();
+                handleFavoriteListInternal();
+              }}
               sx={{ justifyContent: "flex-end" }}
             >
               {isFavorited ? (
@@ -63,7 +72,12 @@ export default function MovieCard({ index, movie }) {
               </button>
 
               {/* Botão de Favorito */}
-              <IconButton onClick={handleFavoriteClick}>
+              <IconButton
+                onClick={() => {
+                  handleFavoriteClick();
+                  handleFavoriteListInternal();
+                }}
+              >
                 {isFavorited ? null : (
                   <FavoriteBorderIcon sx={{ fontSize: 40, color: red[900] }} />
                 )}
