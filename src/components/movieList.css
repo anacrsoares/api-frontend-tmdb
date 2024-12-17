@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
+  flex-wrap: wrap;
 }
 
 .movies-list {
@@ -14,4 +15,14 @@
   list-style: none;
   padding: 40px;
   width: 100vw;
+}
+
+.movies-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: auto;
+  width: 80vw;
+  height: 80px;
 }

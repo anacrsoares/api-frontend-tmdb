@@ -10,22 +10,35 @@ const moviesDiscover = import.meta.env.VITE_API_DISCOVER;
 
 export default function MovieList({ searchTerm }) {
   const [moviesList, setMoviesList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleClick = (id) => {
     console.log(id);
   };
 
-  const getMovies = () => {
+  const getMovies = (pageNumber = 1) => {
     axios({
       method: "get",
       url: moviesDiscover,
       params: {
         api_key: apiKey,
         language: "pt-BR",
+        page: pageNumber,
       },
     }).then((response) => {
-      setMoviesList(response.data.results);
+      setMoviesList((prevMovies) => [
+        ...prevMovies,
+        ...response.data.results,
+      ]).catch((error) => {
+        console.error("Erro ao buscar filmes:", error);
+      });
     });
+  };
+
+  const loadMoreMovies = () => {
+    const nextPage = currentPage + 1;
+    getMovies(nextPage);
+    setCurrentPage(nextPage);
   };
 
   useEffect(() => {
@@ -53,6 +66,9 @@ export default function MovieList({ searchTerm }) {
           <p>Nenhum filme encontrado</p>
         )}
       </ul>
+      <button className="movies-loader" onClick={loadMoreMovies}>
+        Carregar mais filmes
+      </button>
     </div>
   );
 }
